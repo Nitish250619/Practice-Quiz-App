@@ -1,0 +1,22 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./Pages/HomePage/HomePage";
+import ShowQuiz from "./Pages/ShowQuiz/ShowQuiz";
+import ReviewPage from "./Pages/ReviewPage/ReviewPage";
+import ProblemSolvingPage from "./Pages/ProblemSolvingPage/ProblemSolvingPage";
+import QuestionsPage from "./Pages/QuestionsPage/QuestionsPage";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/quiz/:quizId" element={<ShowQuiz />} />
+        <Route path="/results" element={<ReviewPage />} />
+        <Route path="/problem-solving-questions" element={<ProblemSolvingPage />} /> 
+        <Route path="/questions/:topic" element={<QuestionsPage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
