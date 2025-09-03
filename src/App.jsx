@@ -4,6 +4,9 @@ import ShowQuiz from "./Pages/ShowQuiz/ShowQuiz";
 import ReviewPage from "./Pages/ReviewPage/ReviewPage";
 import ProblemSolvingPage from "./Pages/ProblemSolvingPage/ProblemSolvingPage";
 import QuestionsPage from "./Pages/QuestionsPage/QuestionsPage";
+import Polyfillpage from "./Pages/Polyfillpage/Polyfillpage";
+import BeginnerPage from "./Pages/Polyfillpage/BeginnerPage";
+import IntermediatePage from "./Pages/Polyfillpage/IntermediatePage";
 
 function App() {
   return (
@@ -14,6 +17,11 @@ function App() {
         <Route path="/results" element={<ReviewPage />} />
         <Route path="/problem-solving-questions" element={<ProblemSolvingPage />} /> 
         <Route path="/questions/:topic" element={<QuestionsPage />} />
+        <Route path="/practice-polyfills" element={<Polyfillpage />} />
+
+        {/* Dynamic Beginner & Intermediate Pages */}
+        <Route path="/polyfills/:type/beginner" element={<BeginnerPage />} />
+        <Route path="/polyfills/:type/intermediate" element={<IntermediatePage />} />
       </Routes>
     </Router>
   );

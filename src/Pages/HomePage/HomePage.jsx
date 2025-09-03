@@ -12,6 +12,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import quizzes from "../../data/quizzes";
 import ProblemSolvingButton from "../../Components/ProblemSolvingButton/ProblemSolvingButton";
+import PracticePolyfillsButton from "../../Components/PracticePolyfillsButton/PracticePolyfillsButton";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -108,6 +109,9 @@ const HomePage = () => {
           </Grid>
           <Box sx={{ mt: 6, textAlign: 'center' }}>
                 <ProblemSolvingButton />
+            </Box>
+            <Box sx={{ mt: 6, textAlign: 'center' }}>
+                <PracticePolyfillsButton />
             </Box>
         </Container>
       </Box>
