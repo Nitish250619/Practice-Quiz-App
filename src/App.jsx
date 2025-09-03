@@ -7,6 +7,8 @@ import QuestionsPage from "./Pages/QuestionsPage/QuestionsPage";
 import Polyfillpage from "./Pages/Polyfillpage/Polyfillpage";
 import BeginnerPage from "./Pages/Polyfillpage/BeginnerPage";
 import IntermediatePage from "./Pages/Polyfillpage/IntermediatePage";
+import JSmethods from "./Pages/JSmethods/JSmethods";
+import MethodDetail from "./Pages/MethodDetail/MethodDetail";
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
         {/* Dynamic Beginner & Intermediate Pages */}
         <Route path="/polyfills/:type/beginner" element={<BeginnerPage />} />
         <Route path="/polyfills/:type/intermediate" element={<IntermediatePage />} />
+        {/*dynamic routes for methods  */}
+        <Route path="/explore-js-methods" element={<JSmethods/>} />
+        <Route path="/methods/:category/:level" element={<MethodDetail />} />
       </Routes>
     </Router>
   );
