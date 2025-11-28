@@ -15,13 +15,59 @@ import ProblemSolvingButton from "../../Components/ProblemSolvingButton/ProblemS
 import PracticePolyfillsButton from "../../Components/PracticePolyfillsButton/PracticePolyfillsButton";
 import ExploreJSMethodsButton from "../../Components/ExploreJSMethodsButton/ExploreJSMethodsButton";
 
-
-
 const HomePage = () => {
   const navigate = useNavigate();
 
   const handleStartQuiz = (quizId) => {
     navigate(`/quiz/${quizId}`);
+  };
+
+  // 🔹 DSA topic buttons config
+  const dsaTopics = [
+    { label: "DSA: Arrays", path: "/dsa/arrays" },
+    { label: "DSA: Strings", path: "/dsa/strings" },
+    { label: "DSA: Linked List", path: "/dsa/linked-list" },
+    { label: "DSA: Stack", path: "/dsa/stack" },
+    { label: "DSA: Queue", path: "/dsa/queue" },
+    { label: "DSA: Recursion", path: "/dsa/recursion" },
+  ];
+
+  // 🔹 Pattern buttons config
+  const patterns = [
+  { label: "Two Pointers", path: "/patterns/two-pointers" },
+  { label: "Sliding Window", path: "/patterns/sliding-window" },
+  { label: "Prefix Sum", path: "/patterns/prefix-sum" },
+  
+  { label: "Binary Search", path: "/patterns/binary-search" },
+  { label: "Sorting + Two Pointers", path: "/patterns/sort-two-pointers" },
+  { label: "Cyclic Sort / Index Placement", path: "/patterns/cyclic-sort" },
+  
+  { label: "Greedy", path: "/patterns/greedy" },
+  { label: "Intervals & Merge", path: "/patterns/intervals" },
+  { label: "Monotonic Stack", path: "/patterns/monotonic-stack" },
+  { label: "Monotonic Deque (Sliding Window)", path: "/patterns/monotonic-deque" },
+  
+  { label: "Dynamic Programming", path: "/patterns/dp" },
+  { label: "String Hashing / Anagrams", path: "/patterns/string-hashing" },
+  { label: "Palindrome Expand Center", path: "/patterns/palindrome-center" },
+  
+  { label: "Graph BFS / DFS", path: "/patterns/graph-traversal" },
+  { label: "Heap / Priority Queue", path: "/patterns/heap" },
+];
+
+
+  // 🔹 Algorithm buttons config
+  const dsaAlgorithms = [
+    { label: "Searching Algorithms", path: "/algorithms/searching" },
+    { label: "Sorting Algorithms", path: "/algorithms/sorting" },
+    { label: "Recursion & Backtracking", path: "/algorithms/backtracking" },
+    { label: "Greedy Algorithms", path: "/algorithms/greedy" },
+    { label: "Graph Algorithms", path: "/algorithms/graphs" },
+    { label: "Tree Algorithms", path: "/algorithms/trees" },
+  ];
+
+  const handleNavigate = (path) => {
+    navigate(path);
   };
 
   return (
@@ -38,7 +84,7 @@ const HomePage = () => {
         sx={{
           display: "flex",
           justifyContent: "flex-end",
-          p: { xs: 1.5, sm: 2, md: 3 }, // responsive padding
+          p: { xs: 1.5, sm: 2, md: 3 },
         }}
       >
         <ExploreJSMethodsButton />
@@ -121,7 +167,121 @@ const HomePage = () => {
           ))}
         </Grid>
 
-        {/* 🔹 Other Buttons (centered below quizzes) */}
+        {/* 🔹 DSA Topic Practice Buttons */}
+        <Box sx={{ mt: 6 }}>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 600,
+              color: "#0d47a1",
+              mb: 2,
+              textAlign: "center",
+            }}
+          >
+            Practice DSA Topics
+          </Typography>
+          <Grid container spacing={2} justifyContent="center">
+            {dsaTopics.map((topic) => (
+              <Grid item xs={12} sm={6} md={4} key={topic.path}>
+                <Button
+                  fullWidth
+                  variant="outlined"
+                  onClick={() => handleNavigate(topic.path)}
+                  sx={{
+                    textTransform: "none",
+                    fontWeight: 600,
+                    borderRadius: 3,
+                    py: 1.2,
+                    backgroundColor: "rgba(255,255,255,0.8)",
+                    "&:hover": {
+                      backgroundColor: "#e3f2fd",
+                    },
+                  }}
+                >
+                  {topic.label}
+                </Button>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+
+        {/* 🔹 Pattern Practice Buttons */}
+        <Box sx={{ mt: 6 }}>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 600,
+              color: "#0d47a1",
+              mb: 2,
+              textAlign: "center",
+            }}
+          >
+            Practice Patterns
+          </Typography>
+          <Grid container spacing={2} justifyContent="center">
+            {patterns.map((pattern) => (
+              <Grid item xs={12} sm={6} md={4} key={pattern.path}>
+                <Button
+                  fullWidth
+                  variant="outlined"
+                  onClick={() => handleNavigate(pattern.path)}
+                  sx={{
+                    textTransform: "none",
+                    fontWeight: 600,
+                    borderRadius: 3,
+                    py: 1.2,
+                    backgroundColor: "rgba(255,255,255,0.8)",
+                    "&:hover": {
+                      backgroundColor: "#e3f2fd",
+                    },
+                  }}
+                >
+                  {pattern.label}
+                </Button>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+
+        {/* 🔹 Algorithms Practice Buttons */}
+        <Box sx={{ mt: 6 }}>
+          <Typography
+            variant="h5"
+            sx={{
+              fontWeight: 600,
+              color: "#0d47a1",
+              mb: 2,
+              textAlign: "center",
+            }}
+          >
+            Practice Algorithms
+          </Typography>
+          <Grid container spacing={2} justifyContent="center">
+            {dsaAlgorithms.map((algo) => (
+              <Grid item xs={12} sm={6} md={4} key={algo.path}>
+                <Button
+                  fullWidth
+                  variant="outlined"
+                  onClick={() => handleNavigate(algo.path)}
+                  sx={{
+                    textTransform: "none",
+                    fontWeight: 600,
+                    borderRadius: 3,
+                    py: 1.2,
+                    backgroundColor: "rgba(255,255,255,0.8)",
+                    "&:hover": {
+                      backgroundColor: "#e3f2fd",
+                    },
+                  }}
+                >
+                  {algo.label}
+                </Button>
+              </Grid>
+            ))}
+          </Grid>
+        </Box>
+
+        {/* 🔹 Other Buttons (centered below) */}
         <Box sx={{ mt: 6, textAlign: "center" }}>
           <ProblemSolvingButton />
         </Box>

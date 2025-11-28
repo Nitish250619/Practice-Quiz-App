@@ -9,6 +9,13 @@ import BeginnerPage from "./Pages/Polyfillpage/BeginnerPage";
 import IntermediatePage from "./Pages/Polyfillpage/IntermediatePage";
 import JSmethods from "./Pages/JSmethods/JSmethods";
 import MethodDetail from "./Pages/MethodDetail/MethodDetail";
+import DsaArray from "./Components/DsaTopics/DsaArray/DsaArray";
+import DsaString from "./Components/DsaTopics/DsaString/DsaString";
+import DsaLinkedList from "./Components/DsaTopics/DsaLinkedList/DsaLinkedList";
+import DsaStack from "./Components/DsaTopics/DsaStack/DsaStack";
+import DsaQueue from "./Components/DsaTopics/DsaQueue/DsaQueue";
+import DsaRecursion from "./Components/DsaTopics/DsaRecursion/DsaRecursion";
+import PatternDetail from "./Pages/PatternDetail/PatternDetail";
 
 function App() {
   return (
@@ -27,6 +34,17 @@ function App() {
         {/*dynamic routes for methods  */}
         <Route path="/explore-js-methods" element={<JSmethods/>} />
         <Route path="/methods/:category/:level" element={<MethodDetail />} />
+        {/* dsa topics practice question */}
+        <Route path="/dsa/arrays" element={<DsaArray />} />
+        <Route path="/dsa/strings" element={<DsaString />} />
+        <Route path="/dsa/linked-list" element={<DsaLinkedList />} />
+        <Route path="/dsa/stack" element={<DsaStack />} />
+        <Route path="/dsa/queue" element={<DsaQueue />} />
+        <Route path="/dsa/recursion" element={<DsaRecursion />} />
+
+        {/* Dynamic Pattern Route */}
+          <Route path="/patterns/:name" element={<PatternDetail />} />
+
       </Routes>
     </Router>
   );
