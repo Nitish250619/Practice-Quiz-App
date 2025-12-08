@@ -14,6 +14,7 @@ import quizzes from "../../data/quizzes";
 import ProblemSolvingButton from "../../Components/ProblemSolvingButton/ProblemSolvingButton";
 import PracticePolyfillsButton from "../../Components/PracticePolyfillsButton/PracticePolyfillsButton";
 import ExploreJSMethodsButton from "../../Components/ExploreJSMethodsButton/ExploreJSMethodsButton";
+import ExploreProblemSolving from "../../Components/ExploreProblemSolving/ExploreProblemSolving";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -84,10 +85,12 @@ const HomePage = () => {
         sx={{
           display: "flex",
           justifyContent: "flex-end",
+          gap:"10px",
           p: { xs: 1.5, sm: 2, md: 3 },
         }}
       >
         <ExploreJSMethodsButton />
+        <ExploreProblemSolving/>
       </Box>
 
       {/* 🔹 Main Content */}

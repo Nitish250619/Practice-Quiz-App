@@ -16,6 +16,7 @@ import DsaStack from "./Components/DsaTopics/DsaStack/DsaStack";
 import DsaQueue from "./Components/DsaTopics/DsaQueue/DsaQueue";
 import DsaRecursion from "./Components/DsaTopics/DsaRecursion/DsaRecursion";
 import PatternDetail from "./Pages/PatternDetail/PatternDetail";
+import ImpProblemSolving from "./Pages/ImpProblemSolving/ImpProblemSolving";
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
         {/*dynamic routes for methods  */}
         <Route path="/explore-js-methods" element={<JSmethods/>} />
         <Route path="/methods/:category/:level" element={<MethodDetail />} />
+
+        {/*dynamic routes for problem-solving-imp  */}
+        <Route path="/explore-problem-solving" element={<ImpProblemSolving />} />
         {/* dsa topics practice question */}
         <Route path="/dsa/arrays" element={<DsaArray />} />
         <Route path="/dsa/strings" element={<DsaString />} />
