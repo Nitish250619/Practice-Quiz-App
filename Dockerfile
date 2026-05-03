@@ -4,15 +4,15 @@ WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-RUN npm install --include=dev
+RUN npm config set bin-links true
+RUN npm install --include=dev --legacy-peer-deps
 
 COPY . .
 
 ARG VITE_API_BASE_URL
 ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 
-RUN ls -la node_modules/.bin
-RUN ./node_modules/.bin/vite build
+RUN npx vite build
 
 FROM nginx:alpine
 
