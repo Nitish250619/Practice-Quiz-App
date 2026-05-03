@@ -2,11 +2,8 @@ FROM node:20-alpine AS build
 
 WORKDIR /app
 
-ENV NODE_ENV=development
-
 COPY package.json package-lock.json ./
 
-RUN npm config set production false
 RUN npm install --include=dev
 
 COPY . .
@@ -15,7 +12,7 @@ ARG VITE_API_BASE_URL
 ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 
 RUN ls -la node_modules/.bin
-RUN npm run build
+RUN ./node_modules/.bin/vite build
 
 FROM nginx:alpine
 
