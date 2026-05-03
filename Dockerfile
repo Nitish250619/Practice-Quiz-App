@@ -1,16 +1,11 @@
-FROM node:20-alpine AS build
+FROM node:22-alpine AS build
 
 WORKDIR /app
 
 COPY package.json package-lock.json ./
 
-RUN npm config set bin-links true
-RUN npm install --include=dev --legacy-peer-deps
-
-RUN ls -la
-RUN ls -la node_modules || true
-RUN find node_modules -maxdepth 3 -name vite -type f || true
-RUN npm list vite || true
+RUN npm install -g npm@latest
+RUN npm ci
 
 COPY . .
 
